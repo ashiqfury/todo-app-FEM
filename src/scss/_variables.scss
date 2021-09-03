@@ -1,0 +1,32 @@
+// Layout
+$mobile: 376px;
+$desktop: 1440px;
+$tablet: 768px;
+
+// Colors
+// Primary colors
+$brightBlue: hsl(220, 98%, 61%);
+$checkBackground: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+
+// Neutral colors
+// Light theme
+$veryLightGray: hsl(0, 0%, 98%);
+$veryLightGrayishBlue: hsl(236, 33%, 92%);
+$lightGrayishBlue: hsl(233, 11%, 84%);
+$darkGrayishBlue: hsl(236, 9%, 61%);
+$veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+// dark theme
+$VeryDarkBlue: hsl(235, 21%, 11%);
+$VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+$LightGrayishBlue: hsl(234, 39%, 85%);
+$LightGrayishBlue: hsl(236, 33%, 92%); //hover
+$DarkGrayishBlue: hsl(234, 11%, 52%);
+$VeryDarkGrayishBlue: hsl(233, 14%, 35%);
+$VeryDarkGrayishBlue: hsl(237, 14%, 26%);
+
+// typography
+$fontSize: 18px;
+$font: 'Josefin Sans', sans-serif;
+$font-medium: 400;
+$font-bold: 700;

@@ -15,4 +15,55 @@ body {
 	min-height: 100vh;
 	overflow: hidden;
 	font-family: $font;
+	background: $veryDarkBlue;
+	background-image: url('../images/bg-desktop-dark.jpg');
+	background-size: 100vw 250px;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container {
+	min-width: 400px;
+	width: 35vw;
+	height: auto;
+}
+
+.checkbox {
+	display: none;
+}
+
+.checkbox-label {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 1.5px solid $veryDarkGrayishBlue;
+	transition: 250ms;
+	cursor: pointer;
+}
+
+.checkbox:checked + .checkbox-label {
+	background: $checkBackground;
+	border: none;
+}
+.checkbox:checked + .checkbox-label::after {
+	content: url('../images/icon-check.svg');
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.btn {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: $veryDarkGrayishBlue;
+	font-family: $font;
+	cursor: pointer;
+}
+.btn.active {
+	color: $brightBlue;
+	font-weight: $font-bold;
 }

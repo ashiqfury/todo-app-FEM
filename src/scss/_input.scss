@@ -1,0 +1,26 @@
+.input {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background: $veryDarkDesaturatedBlue;
+	padding: 10px;
+	border-radius: 3px;
+	margin-bottom: 20px;
+
+	&--text {
+		margin-left: 10px;
+		width: 95%;
+		height: 1.5rem;
+		background: transparent;
+		border: none;
+		outline: none;
+		color: $darkGrayishBlue;
+		font-family: $font;
+		font-size: 1rem;
+
+		&::placeholder {
+			color: $veryDarkGrayishBlue;
+		}
+	}
+}

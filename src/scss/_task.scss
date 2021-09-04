@@ -1,0 +1,44 @@
+.tasks {
+	width: 100%;
+	height: auto;
+	background: $veryDarkDesaturatedBlue;
+	border-radius: 3px;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.35),
+		0 0 120px rgba(0, 0, 0, 0.15);
+	user-select: none;
+}
+
+.task {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 10px;
+	border-bottom: 1px solid $veryDarkGrayishBlue;
+
+	&--text {
+		position: relative;
+		width: 90%;
+		margin: 0 10px;
+		color: $lightGrayishBlue;
+		font-size: 1rem;
+		cursor: default;
+		transition: 250ms;
+	}
+
+	&--close {
+		cursor: pointer;
+		opacity: 0;
+		transition: 250ms;
+	}
+}
+
+.task:hover .task--close {
+	opacity: 1;
+	transform: rotate(90deg);
+}
+
+.task--checkbox:checked ~ .task--text {
+	color: $veryDarkGrayishBlue;
+	text-decoration: line-through;
+}

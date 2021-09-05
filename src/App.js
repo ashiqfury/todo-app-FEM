@@ -49,7 +49,14 @@ const App = () => {
 			<div className="tasks">
 				{todo.length ? (
 					todo.map((task) => (
-						<Task key={task.id} id={task.id} text={task.text} completed={task.completed} />
+						<Task
+							key={task.id}
+							id={task.id}
+							text={task.text}
+							completed={task.completed}
+							todo={todo}
+							setTodo={setTodo}
+						/>
 					))
 				) : (
 					<NoTask />

@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
 import close from '../images/icon-cross.svg';
 
-const Task = ({ id, text, todo, setTodo }) => {
-	const [completed, setCompleted] = useState(false);
-
+const Task = ({ id, text, todo, setTodo, checked }) => {
+	console.log('param todo', todo);
+	const [thisTask, setThisTask] = useState({}); // changed object
 	const completedHandler = () => {
-		setCompleted(!completed);
-		// const thisTask = todo.filter((task) => task.id === id);
+		let index,
+			toggler = !checked;
+
+		let taskFound;
+		todo.forEach((task, i) => {
+			if (task.id === id) {
+				index = i;
+				taskFound = task;
+			}
+		});
+		setThisTask(taskFound);
+		// const oldTask = thisTask; // this task object unchanged - original
+		setThisTask((prevState) => ({
+			...prevState,
+			completed: toggler,
+		}));
+
+		toggler = false; //testing
+		const dupTodo = todo;
+		console.log('todo original 1', todo);
+		console.log('todo modified 1', dupTodo);
+		console.log('this task', thisTask);
+		dupTodo[index] = thisTask;
+		setTodo(dupTodo);
+		console.log('todo original 2', todo);
+		console.log('todo modified 2', dupTodo);
 	};
 
 	const deleteHandler = () => {
@@ -18,7 +42,7 @@ const Task = ({ id, text, todo, setTodo }) => {
 		<div className="task">
 			<input
 				type="checkbox"
-				checked={completed}
+				checked={checked}
 				onChange={completedHandler}
 				className="checkbox task--checkbox"
 				id={id}

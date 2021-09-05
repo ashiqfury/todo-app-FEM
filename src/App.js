@@ -14,7 +14,8 @@ const App = () => {
 	const keyHandler = (e) => {
 		// Input field submit handler
 		if (e.key === 'Enter') {
-			setTodo([...todo, { id: Math.random() * 1000, text: value, completed: false }]);
+			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
+			console.log('todo submit', todo);
 			setValue('');
 		}
 	};
@@ -27,17 +28,16 @@ const App = () => {
 				setValue={setValue}
 				keyHandler={keyHandler}
 				isChecked={isChecked}
-				setIsChecke={setIsChecked}
+				setIsChecked={setIsChecked}
 			/>
 			<div className="tasks">
 				{todo.length ? (
 					todo.map((task) => (
 						<Task
-							key={task.id}
+							// key={task.id}
 							id={task.id}
 							text={task.text}
-							completed={task.completed}
-							setCompleted={''}
+							checked={task.completed}
 							todo={todo}
 							setTodo={setTodo}
 						/>

@@ -2,7 +2,6 @@ import React from 'react';
 import close from '../images/icon-cross.svg';
 
 const Task = ({ id, text, completed }) => {
-	console.log(id);
 	return (
 		<div className="task">
 			<input type="checkbox" className="checkbox task--checkbox" id={id} />

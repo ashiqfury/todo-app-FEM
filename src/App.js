@@ -7,45 +7,28 @@ import Footer from './components/Footer';
 import NoTask from './components/NoTask';
 
 const App = () => {
-	// const todoList = [
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// 	{
-	// 		text: 'this is my first task',
-	// 		id: Math.random() * 1000,
-	// 		completed: false,
-	// 	},
-	// ];
+	const [todo, setTodo] = useState([]); // List of all todos
+	const [value, setValue] = useState(''); // input field values
+	const [isChecked, setIsChecked] = useState(false); // input field checkbox
 
-	const [todo, setTodo] = useState([]);
+	const keyHandler = (e) => {
+		// Input field submit handler
+		if (e.key === 'Enter') {
+			setTodo([...todo, { id: Math.random() * 1000, text: value, completed: false }]);
+			setValue('');
+		}
+	};
 
 	return (
 		<div className="container">
 			<Header />
-			<Input todo={todo} setTodo={setTodo} />
+			<Input
+				value={value}
+				setValue={setValue}
+				keyHandler={keyHandler}
+				isChecked={isChecked}
+				setIsChecke={setIsChecked}
+			/>
 			<div className="tasks">
 				{todo.length ? (
 					todo.map((task) => (
@@ -54,6 +37,7 @@ const App = () => {
 							id={task.id}
 							text={task.text}
 							completed={task.completed}
+							setCompleted={''}
 							todo={todo}
 							setTodo={setTodo}
 						/>

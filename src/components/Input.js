@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Input = ({ todo, setTodo }) => {
-	const [value, setValue] = useState('');
-
-	const keyHandler = (e) => {
-		if (e.key === 'Enter') {
-			setTodo([...todo, { id: Math.random() * 1000, text: value, completed: false }]);
-			setValue('');
-		}
-	};
-
+const Input = ({ value, setValue, keyHandler, isChecked, setIsChecked }) => {
 	return (
 		<div className="input">
-			<input type="checkbox" className="checkbox input--checkbox" id="input--checkbox" />
+			<input
+				type="checkbox"
+				checked={isChecked}
+				onChange={() => setIsChecked(!isChecked)}
+				className="checkbox input--checkbox"
+				id="input--checkbox"
+			/>
 			<label htmlFor="input--checkbox" className="input--label checkbox-label" />
 			<input
 				type="text"

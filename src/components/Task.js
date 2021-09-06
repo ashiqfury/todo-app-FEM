@@ -1,43 +1,17 @@
-import React, { useState } from 'react';
 import close from '../images/icon-cross.svg';
 
 const Task = ({ id, text, todo, setTodo, checked }) => {
-	console.log('param todo', todo);
-	// const [thisTask, setThisTask] = useState({ id, text, completed: checked }); // changed object
 	let toggler = checked;
-	let index;
+	let index = -1;
 	const completedHandler = () => {
 		toggler = !checked;
 
-		// let taskFound;
 		todo.forEach((task, i) => {
-			console.log(task);
-			if (task.id === id) {
-				index = i;
-				// taskFound = task;
-			}
+			if (task.id === id) index = i;
 		});
-		// setThisTask(taskFound); // contain old task.
-		// method 1
-		// setThisTask((prevState) => ({
-		// 	...prevState,
-		// 	completed: toggler,
-		// }));
-		// method 2
-		console.log('toggler after toggled', toggler);
-		// console.log('thistask before setted', thisTask);
-		// setThisTask({ ...thisTask, id, text, completed: toggler });
-		// console.log('thistask after setted', thisTask);
-
 		const dupTodo = [...todo];
-		console.log('todo original', todo);
-		console.log('duptodo original', dupTodo);
-		console.log('index', index);
-		// dupTodo[index] = thisTask;
 		dupTodo[index] = { id, text, completed: toggler };
 		setTodo(dupTodo);
-		console.log('todo modified', todo);
-		console.log('duptodo modified', dupTodo);
 	};
 
 	const deleteHandler = () => {

@@ -10,12 +10,12 @@ const App = () => {
 	const [todo, setTodo] = useState([]); // List of all todos
 	const [value, setValue] = useState(''); // input field values
 	const [isChecked, setIsChecked] = useState(false); // input field checkbox
+	// const [filteredArray, setFilteredArray] = useState([]);
 
 	const keyHandler = (e) => {
 		// Input field submit handler
 		if (e.key === 'Enter') {
 			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
-			console.log('todo submit', todo);
 			setValue('');
 		}
 	};

@@ -3,34 +3,41 @@ import close from '../images/icon-cross.svg';
 
 const Task = ({ id, text, todo, setTodo, checked }) => {
 	console.log('param todo', todo);
-	const [thisTask, setThisTask] = useState({}); // changed object
+	// const [thisTask, setThisTask] = useState({ id, text, completed: checked }); // changed object
+	let toggler = checked;
+	let index;
 	const completedHandler = () => {
-		let index,
-			toggler = !checked;
+		toggler = !checked;
 
-		let taskFound;
+		// let taskFound;
 		todo.forEach((task, i) => {
+			console.log(task);
 			if (task.id === id) {
 				index = i;
-				taskFound = task;
+				// taskFound = task;
 			}
 		});
-		setThisTask(taskFound);
-		// const oldTask = thisTask; // this task object unchanged - original
-		setThisTask((prevState) => ({
-			...prevState,
-			completed: toggler,
-		}));
+		// setThisTask(taskFound); // contain old task.
+		// method 1
+		// setThisTask((prevState) => ({
+		// 	...prevState,
+		// 	completed: toggler,
+		// }));
+		// method 2
+		console.log('toggler after toggled', toggler);
+		// console.log('thistask before setted', thisTask);
+		// setThisTask({ ...thisTask, id, text, completed: toggler });
+		// console.log('thistask after setted', thisTask);
 
-		toggler = false; //testing
-		const dupTodo = todo;
-		console.log('todo original 1', todo);
-		console.log('todo modified 1', dupTodo);
-		console.log('this task', thisTask);
-		dupTodo[index] = thisTask;
+		const dupTodo = [...todo];
+		console.log('todo original', todo);
+		console.log('duptodo original', dupTodo);
+		console.log('index', index);
+		// dupTodo[index] = thisTask;
+		dupTodo[index] = { id, text, completed: toggler };
 		setTodo(dupTodo);
-		console.log('todo original 2', todo);
-		console.log('todo modified 2', dupTodo);
+		console.log('todo modified', todo);
+		console.log('duptodo modified', dupTodo);
 	};
 
 	const deleteHandler = () => {
@@ -42,7 +49,7 @@ const Task = ({ id, text, todo, setTodo, checked }) => {
 		<div className="task">
 			<input
 				type="checkbox"
-				checked={checked}
+				checked={toggler}
 				onChange={completedHandler}
 				className="checkbox task--checkbox"
 				id={id}

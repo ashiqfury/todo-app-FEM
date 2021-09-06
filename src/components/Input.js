@@ -19,6 +19,7 @@ const Input = ({ value, setValue, keyHandler, isChecked, setIsChecked }) => {
 				onChange={(e) => setValue(e.target.value)}
 				onKeyDown={keyHandler}
 				value={value}
+				autoFocus
 			/>
 		</div>
 	);

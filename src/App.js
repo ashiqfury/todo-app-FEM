@@ -10,13 +10,16 @@ const App = () => {
 	const [todo, setTodo] = useState([]); // List of all todos
 	const [value, setValue] = useState(''); // input field values
 	const [isChecked, setIsChecked] = useState(false); // input field checkbox
-	// const [filteredArray, setFilteredArray] = useState([]);
+	const [filters, setFilters] = useState('all');
 
 	const keyHandler = (e) => {
 		// Input field submit handler
 		if (e.key === 'Enter') {
 			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
 			setValue('');
+
+			const filtArr = todo.filter((task) => task.completed === true);
+			console.log(filtArr);
 		}
 	};
 
@@ -45,7 +48,7 @@ const App = () => {
 				) : (
 					<NoTask />
 				)}
-				<Footer count={todo.length} />
+				<Footer count={todo.length} setFilters={setFilters} />
 			</div>
 		</div>
 	);

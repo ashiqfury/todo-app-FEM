@@ -175,3 +175,32 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.notask {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid #393a4c;
+  padding: 30px 80px;
+  transition: 250ms;
+}
+.notask__text {
+  color: #777a92;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
+}
+.notask__text-top {
+  align-self: flex-start;
+}
+.notask__text-bottom {
+  align-self: flex-end;
+}
+.notask__text--highlight {
+  color: #cacde8;
+  font-size: 42px;
+  text-transform: uppercase;
+  padding: 20px 0;
+  text-shadow: 0 0 5px #3a7bfd;
+}

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 const Footer = ({ count, setFilters, setTodo }) => {
 	const allBtn = useRef(null);

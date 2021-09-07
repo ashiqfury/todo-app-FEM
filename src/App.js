@@ -35,7 +35,6 @@ const App = () => {
 				setIsChecked={setIsChecked}
 			/>
 			<div className="tasks">
-				y
 				{filters === 'all' && // All task filter
 					todo.map((task) => (
 						<Task

@@ -3,7 +3,9 @@ import React from 'react';
 const NoTask = () => {
 	return (
 		<div className="notask">
-			<p className="notask--text">No task to render</p>
+			<div className="notask__text notask__text-top">You have</div>
+			<div className="notask__text--highlight">No task</div>
+			<div className="notask__text notask__text-bottom">to complete</div>
 		</div>
 	);
 };

@@ -1,6 +1,14 @@
 import React from 'react';
 
-const Input = ({ value, setValue, keyHandler, isChecked, setIsChecked }) => {
+const Input = ({ value, setValue, todo, setTodo, isChecked, setIsChecked }) => {
+	const keyHandler = (e) => {
+		// Input field submit handler
+		if (e.key === 'Enter') {
+			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
+			setValue('');
+		}
+	};
+
 	return (
 		<div className="input">
 			<input

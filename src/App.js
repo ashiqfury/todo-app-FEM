@@ -19,25 +19,16 @@ const App = () => {
 		filters === 'completed' && setFilteredTodo(todo.filter((task) => task.completed === true));
 	}, [filters, todo]);
 
-	const keyHandler = (e) => {
-		// Input field submit handler
-		if (e.key === 'Enter') {
-			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
-			setValue('');
-		}
-
-		console.log('filteredTodo', filteredTodo);
-	};
-
 	return (
 		<div className="container">
 			<Header />
 			<Input
 				value={value}
 				setValue={setValue}
-				keyHandler={keyHandler}
 				isChecked={isChecked}
 				setIsChecked={setIsChecked}
+				todo={todo}
+				setTodo={setTodo}
 			/>
 			<div className="tasks">
 				{filteredTodo.length ? (

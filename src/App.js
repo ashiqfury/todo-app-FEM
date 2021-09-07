@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './css/style.css';
 import Header from './components/Header';
 import Input from './components/Input';
@@ -11,17 +11,22 @@ const App = () => {
 	const [value, setValue] = useState(''); // input field values
 	const [isChecked, setIsChecked] = useState(false); // input field checkbox
 	const [filters, setFilters] = useState('all');
+	const [filteredTodo, setFilteredTodo] = useState([]);
+
+	useEffect(() => {
+		filters === 'all' && setFilteredTodo(todo.map((task) => task));
+		filters === 'active' && setFilteredTodo(todo.filter((task) => task.completed === false));
+		filters === 'completed' && setFilteredTodo(todo.filter((task) => task.completed === true));
+	}, [filters, todo]);
 
 	const keyHandler = (e) => {
 		// Input field submit handler
 		if (e.key === 'Enter') {
 			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
 			setValue('');
-
-			const filtArr = todo.filter((task) => task.completed === true);
-			console.log(filtArr);
-			console.log(filters);
 		}
+
+		console.log('filteredTodo', filteredTodo);
 	};
 
 	return (
@@ -35,8 +40,8 @@ const App = () => {
 				setIsChecked={setIsChecked}
 			/>
 			<div className="tasks">
-				{filters === 'all' && // All task filter
-					todo.map((task) => (
+				{filteredTodo.length ? (
+					filteredTodo.map((task) => (
 						<Task
 							id={task.id}
 							text={task.text}
@@ -44,32 +49,10 @@ const App = () => {
 							todo={todo}
 							setTodo={setTodo}
 						/>
-					))}
-				{filters === 'completed' && // Completed task filter
-					todo
-						.filter((task) => task.completed === true)
-						.map((task) => (
-							<Task
-								id={task.id}
-								text={task.text}
-								checked={task.completed}
-								todo={todo}
-								setTodo={setTodo}
-							/>
-						))}
-				{filters === 'active' && // Active task filter
-					todo
-						.filter((task) => task.completed === false)
-						.map((task) => (
-							<Task
-								id={task.id}
-								text={task.text}
-								checked={task.completed}
-								todo={todo}
-								setTodo={setTodo}
-							/>
-						))}
-				{!todo.length && <NoTask />}
+					))
+				) : (
+					<NoTask />
+				)}
 				<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
 			</div>
 		</div>

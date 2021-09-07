@@ -35,10 +35,10 @@ const App = () => {
 				setIsChecked={setIsChecked}
 			/>
 			<div className="tasks">
+				y
 				{filters === 'all' && // All task filter
 					todo.map((task) => (
 						<Task
-							// key={task.id}
 							id={task.id}
 							text={task.text}
 							checked={task.completed}
@@ -51,7 +51,6 @@ const App = () => {
 						.filter((task) => task.completed === true)
 						.map((task) => (
 							<Task
-								// key={task.id}
 								id={task.id}
 								text={task.text}
 								checked={task.completed}
@@ -59,13 +58,11 @@ const App = () => {
 								setTodo={setTodo}
 							/>
 						))}
-
 				{filters === 'active' && // Active task filter
 					todo
 						.filter((task) => task.completed === false)
 						.map((task) => (
 							<Task
-								// key={task.id}
 								id={task.id}
 								text={task.text}
 								checked={task.completed}
@@ -73,24 +70,8 @@ const App = () => {
 								setTodo={setTodo}
 							/>
 						))}
-
 				{!todo.length && <NoTask />}
-
-				{/* {todo.length ? (
-					todo.map((task) => (
-						<Task
-							// key={task.id}
-							id={task.id}
-							text={task.text}
-							checked={task.completed}
-							todo={todo}
-							setTodo={setTodo}
-						/>
-					))
-				) : (
-					<NoTask />
-				)} */}
-				<Footer count={todo.length} setFilters={setFilters} />
+				<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
 			</div>
 		</div>
 	);

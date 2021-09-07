@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const Footer = ({ count, setFilters }) => {
+const Footer = ({ count, setFilters, setTodo }) => {
 	const allBtn = useRef(null);
 	const activeBtn = useRef(null);
 	const completedBtn = useRef(null);
@@ -34,7 +34,9 @@ const Footer = ({ count, setFilters }) => {
 					Completed
 				</button>
 			</div>
-			<button className="footer--clear btn">Clear Completed</button>
+			<button className="footer--clear btn" onClick={() => setTodo([])}>
+				Clear Completed
+			</button>
 		</div>
 	);
 };

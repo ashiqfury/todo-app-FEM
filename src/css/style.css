@@ -150,6 +150,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 40px rgba(0, 0, 0, 0.35), 0 0 120px rgba(0, 0, 0, 0.15);
   user-select: none;
+  transition: 250ms;
 }
 
 .task {
@@ -159,6 +160,7 @@ body {
   justify-content: space-between;
   padding: 12px 10px;
   border-bottom: 1px solid #393a4c;
+  transition: 250ms;
 }
 .task--text {
   position: relative;
@@ -191,6 +193,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
+  transition: 500ms;
 }
 .footer--count {
   font-size: 14px;

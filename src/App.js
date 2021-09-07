@@ -14,6 +14,10 @@ const App = () => {
 	const [filteredTodo, setFilteredTodo] = useState([]);
 
 	useEffect(() => {
+		console.log(isChecked);
+	}, [isChecked]);
+
+	useEffect(() => {
 		filters === 'all' && setFilteredTodo(todo.map((task) => task));
 		filters === 'active' && setFilteredTodo(todo.filter((task) => task.completed === false));
 		filters === 'completed' && setFilteredTodo(todo.filter((task) => task.completed === true));
@@ -34,6 +38,7 @@ const App = () => {
 				{filteredTodo.length ? (
 					filteredTodo.map((task) => (
 						<Task
+							key={task.id}
 							id={task.id}
 							text={task.text}
 							checked={task.completed}

@@ -33,15 +33,18 @@ body {
 	display: flex;
 	justify-content: center;
 	margin: 100px auto 50px;
-	animation: background 500ms 500ms forwards;
+	animation: background 800ms 500ms forwards;
 	transition: 500ms;
 }
 
 @keyframes background {
-	from {
+	0% {
 		background-size: 100vw 0;
 	}
-	to {
+	50% {
+		background-size: 100vw 450px;
+	}
+	100% {
 		background-size: 100vw 250px;
 	}
 }
@@ -50,6 +53,7 @@ body {
 	min-width: 400px;
 	width: 35vw;
 	height: auto;
+	transition: 500ms;
 }
 
 .checkbox {

@@ -20,6 +20,7 @@ const App = () => {
 
 			const filtArr = todo.filter((task) => task.completed === true);
 			console.log(filtArr);
+			console.log(filters);
 		}
 	};
 
@@ -34,7 +35,48 @@ const App = () => {
 				setIsChecked={setIsChecked}
 			/>
 			<div className="tasks">
-				{todo.length ? (
+				{filters === 'all' && // All task filter
+					todo.map((task) => (
+						<Task
+							// key={task.id}
+							id={task.id}
+							text={task.text}
+							checked={task.completed}
+							todo={todo}
+							setTodo={setTodo}
+						/>
+					))}
+				{filters === 'completed' && // Completed task filter
+					todo
+						.filter((task) => task.completed === true)
+						.map((task) => (
+							<Task
+								// key={task.id}
+								id={task.id}
+								text={task.text}
+								checked={task.completed}
+								todo={todo}
+								setTodo={setTodo}
+							/>
+						))}
+
+				{filters === 'active' && // Active task filter
+					todo
+						.filter((task) => task.completed === false)
+						.map((task) => (
+							<Task
+								// key={task.id}
+								id={task.id}
+								text={task.text}
+								checked={task.completed}
+								todo={todo}
+								setTodo={setTodo}
+							/>
+						))}
+
+				{!todo.length && <NoTask />}
+
+				{/* {todo.length ? (
 					todo.map((task) => (
 						<Task
 							// key={task.id}
@@ -47,7 +89,7 @@ const App = () => {
 					))
 				) : (
 					<NoTask />
-				)}
+				)} */}
 				<Footer count={todo.length} setFilters={setFilters} />
 			</div>
 		</div>

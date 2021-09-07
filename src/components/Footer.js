@@ -8,9 +8,9 @@ const Footer = ({ count, setFilters }) => {
 	const allBtns = [allBtn, activeBtn, completedBtn];
 
 	const clickHandler = (e) => {
-		if (e.target.innerHTML === 'All') console.log('clicked all');
-		if (e.target.innerHTML === 'Active') console.log('clicked active');
-		if (e.target.innerHTML === 'Completed') console.log('clicked completed');
+		if (e.target.innerHTML === 'All') setFilters('all');
+		if (e.target.innerHTML === 'Active') setFilters('active');
+		if (e.target.innerHTML === 'Completed') setFilters('completed');
 
 		activeChanger(e);
 	};

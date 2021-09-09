@@ -5,6 +5,7 @@ import Input from './components/Input';
 import Task from './components/Task';
 import Footer from './components/Footer';
 import NoTask from './components/NoTask';
+import Drag from './components/Drag';
 
 const App = () => {
 	const [todo, setTodo] = useState([]); // List of all todos
@@ -51,6 +52,7 @@ const App = () => {
 				)}
 				<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
 			</div>
+			<Drag />
 		</div>
 	);
 };

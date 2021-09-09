@@ -1,0 +1,11 @@
+.drag {
+	margin-top: 40px;
+	text-align: center;
+	color: $veryDarkGrayishBlue;
+	font-size: 0.7rem;
+	user-select: none;
+
+	@media only screen and (max-width: 768px) {
+		margin-top: 80px;
+	}
+}

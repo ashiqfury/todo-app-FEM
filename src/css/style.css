@@ -299,3 +299,16 @@ body {
   padding: 20px 0;
   text-shadow: 0 0 5px #3a7bfd;
 }
+
+.drag {
+  margin-top: 40px;
+  text-align: center;
+  color: #393a4c;
+  font-size: 0.7rem;
+  user-select: none;
+}
+@media only screen and (max-width: 768px) {
+  .drag {
+    margin-top: 80px;
+  }
+}

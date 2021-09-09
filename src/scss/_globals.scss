@@ -40,6 +40,7 @@ body {
 	@media only screen and (max-width: 768px) {
 		margin: 50px auto 30px;
 		background-size: 100vw 100px;
+		background-image: url('../images/bg-mobile-dark.jpg');
 		animation: backgroundMobile 800ms 500ms forwards ease-in-out;
 	}
 }

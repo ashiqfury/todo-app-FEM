@@ -43,6 +43,7 @@ body {
   body {
     margin: 50px auto 30px;
     background-size: 100vw 100px;
+    background-image: url("../images/bg-mobile-dark.jpg");
     animation: backgroundMobile 800ms 500ms forwards ease-in-out;
   }
 }
@@ -322,8 +323,13 @@ body {
 }
 
 body.light {
-  background-image: url(../images/bg-desktop-light.jpg);
+  background-image: url("../images/bg-mobile-light.jpg");
   background-color: #fafafa;
+}
+@media only screen and (max-width: 768px) {
+  body.light {
+    background-image: url("../images/bg-desktop-light.jpg");
+  }
 }
 body.light .header--text {
   color: #fafafa;

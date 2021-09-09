@@ -369,7 +369,7 @@ body.light .btn.active {
   color: #3a7bfd;
 }
 body.light .checkbox-label {
-  border: 1.5px solid #d2d3db;
+  border: 1.5px solid #9394a5;
 }
 body.light .task--checkbox:checked ~ .task--text {
   color: #9394a5;

@@ -186,7 +186,6 @@ body {
   justify-content: space-between;
   padding: 12px 10px;
   border-bottom: 1px solid #393a4c;
-  transition: 250ms;
   background: #25273c;
 }
 .task--text {

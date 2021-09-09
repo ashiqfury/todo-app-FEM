@@ -36,20 +36,10 @@ const App = () => {
 		(param) => {
 			const srcI = param.source.index;
 			const desI = param.destination.index;
-			let dupTodo = [];
-			const srcObj = todo[srcI];
-			const desObj = todo[desI];
-			todo.forEach((task, index) => {
-				if (index === srcI) dupTodo.push(desObj);
-				if (index === desI) dupTodo.push(srcObj);
-				// else dupTodo.push(task);
-			});
-
-			// dupTodo[desI] = srcObj;
-			console.log(todo);
-			console.log(dupTodo);
-
-			// console.log(todo.splice(desI, 0, todo.splice(srcI, 1)[0]));
+			let dupTodo = [...todo];
+			dupTodo[srcI] = todo[desI];
+			dupTodo[desI] = todo[srcI];
+			setTodo(dupTodo);
 		},
 		[todo]
 	);

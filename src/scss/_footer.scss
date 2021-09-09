@@ -29,3 +29,26 @@
 		}
 	}
 }
+
+.btn {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: $veryDarkGrayishBlue;
+	font-family: $font;
+	cursor: pointer;
+	transition: 100ms;
+
+	&:hover {
+		color: $lightGrayishBlue;
+	}
+
+	&.active:hover {
+		color: $brightBlue;
+	}
+}
+
+.btn.active {
+	color: $brightBlue;
+	font-weight: $font-bold;
+}

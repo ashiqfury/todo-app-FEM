@@ -97,6 +97,11 @@ body {
 	border: 1.5px solid $veryDarkGrayishBlue;
 	transition: 250ms;
 	cursor: pointer;
+	transition: 200ms;
+}
+
+.checkbox-label:hover {
+	border: 1.5px solid $brightBlue;
 }
 
 .checkbox:checked + .checkbox-label {
@@ -109,16 +114,4 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-}
-.btn {
-	border: none;
-	outline: none;
-	background-color: transparent;
-	color: $veryDarkGrayishBlue;
-	font-family: $font;
-	cursor: pointer;
-}
-.btn.active {
-	color: $brightBlue;
-	font-weight: $font-bold;
 }

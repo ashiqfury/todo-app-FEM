@@ -60,7 +60,7 @@ const App = () => {
 					<Droppable droppableId="droppable-1">
 						{(provided, snapshot) => (
 							<div
-								className="dragable--container"
+								className="draggable--container"
 								ref={provided.innerRef}
 								// style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
 								{...provided.droppableProps}

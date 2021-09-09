@@ -1,0 +1,57 @@
+body.light {
+	background-image: url(../images/bg-desktop-light.jpg);
+	background-color: $veryLightGray;
+
+	.header--text {
+		color: $veryLightGray;
+	}
+	.input {
+		background: $veryLightGrayishBlue;
+
+		&--text {
+			color: $veryDarkGrayishBluelt;
+			&::placeholder {
+				color: $darkGrayishBluelt;
+			}
+		}
+	}
+	.tasks {
+		background: $veryLightGrayishBlue;
+	}
+	.task {
+		background: $veryLightGrayishBlue;
+		&--text {
+			color: $veryDarkGrayishBluelt;
+		}
+	}
+	.notask__text {
+		color: $veryDarkGrayishBluelt;
+		&--highlight {
+			color: $veryDarkGrayishBluelt;
+		}
+	}
+	.footer--count {
+		color: $darkGrayishBluelt;
+	}
+	.footer__filter {
+		background: $veryLightGrayishBlue;
+	}
+	.btn {
+		background-color: transparent;
+		color: $darkGrayishBluelt;
+
+		&:hover {
+			color: $veryDarkGrayishBluelt;
+		}
+	}
+
+	.btn.active {
+		color: $brightBlue;
+	}
+	.checkbox-label {
+		border: 1.5px solid $lightGrayishBluelt;
+	}
+	.task--checkbox:checked ~ .task--text {
+		color: $darkGrayishBluelt;
+	}
+}

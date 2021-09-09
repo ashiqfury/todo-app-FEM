@@ -96,7 +96,7 @@ body {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid #393a4c;
+  border: 1.5px solid #4d5066;
   transition: 250ms;
   cursor: pointer;
   transition: 200ms;
@@ -166,7 +166,7 @@ body {
   font-size: 1rem;
 }
 .input--text::placeholder {
-  color: #393a4c;
+  color: #4d5066;
 }
 
 .tasks {
@@ -185,7 +185,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 12px 10px;
-  border-bottom: 1px solid #393a4c;
+  border-bottom: 1px solid #4d5066;
   background: #25273c;
 }
 .task--text {
@@ -209,8 +209,16 @@ body {
 }
 
 .task--checkbox:checked ~ .task--text {
-  color: #393a4c;
+  color: #4d5066;
   text-decoration: line-through;
+}
+
+.draggable--container {
+  border-radius: 3px 3px 0 0;
+}
+
+.task:first-child {
+  border-radius: 3px 3px 0 0;
 }
 
 .footer {
@@ -224,7 +232,7 @@ body {
 }
 .footer--count {
   font-size: 14px;
-  color: #393a4c;
+  color: #4d5066;
 }
 .footer__filter {
   width: 35%;
@@ -242,6 +250,7 @@ body {
     left: 0;
     padding: 10px 60px;
     border-radius: 3px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
   }
 }
 
@@ -249,7 +258,7 @@ body {
   border: none;
   outline: none;
   background-color: transparent;
-  color: #393a4c;
+  color: #4d5066;
   font-family: "Josefin Sans", sans-serif;
   cursor: pointer;
   transition: 100ms;
@@ -263,7 +272,6 @@ body {
 
 .btn.active {
   color: #3a7bfd;
-  font-weight: 700;
 }
 
 .notask {
@@ -273,7 +281,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-bottom: 1px solid #393a4c;
+  border-bottom: 1px solid #4d5066;
   padding: 30px 80px;
   transition: 250ms;
 }
@@ -303,7 +311,7 @@ body {
 .drag {
   margin-top: 40px;
   text-align: center;
-  color: #393a4c;
+  color: #4d5066;
   font-size: 0.7rem;
   user-select: none;
 }
@@ -311,4 +319,58 @@ body {
   .drag {
     margin-top: 80px;
   }
+}
+
+body.light {
+  background-image: url(../images/bg-desktop-light.jpg);
+  background-color: #fafafa;
+}
+body.light .header--text {
+  color: #fafafa;
+}
+body.light .input {
+  background: #e4e5f1;
+}
+body.light .input--text {
+  color: #484b6a;
+}
+body.light .input--text::placeholder {
+  color: #9394a5;
+}
+body.light .tasks {
+  background: #e4e5f1;
+}
+body.light .task {
+  background: #e4e5f1;
+}
+body.light .task--text {
+  color: #484b6a;
+}
+body.light .notask__text {
+  color: #484b6a;
+}
+body.light .notask__text--highlight {
+  color: #484b6a;
+}
+body.light .footer--count {
+  color: #9394a5;
+}
+body.light .footer__filter {
+  background: #e4e5f1;
+}
+body.light .btn {
+  background-color: transparent;
+  color: #9394a5;
+}
+body.light .btn:hover {
+  color: #484b6a;
+}
+body.light .btn.active {
+  color: #3a7bfd;
+}
+body.light .checkbox-label {
+  border: 1.5px solid #d2d3db;
+}
+body.light .task--checkbox:checked ~ .task--text {
+  color: #9394a5;
 }

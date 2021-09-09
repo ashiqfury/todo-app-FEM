@@ -26,6 +26,7 @@
 			left: 0;
 			padding: 10px 60px;
 			border-radius: 3px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
 		}
 	}
 }
@@ -50,5 +51,4 @@
 
 .btn.active {
 	color: $brightBlue;
-	font-weight: $font-bold;
 }

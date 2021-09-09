@@ -1,6 +1,6 @@
 import close from '../images/icon-cross.svg';
 
-const Task = ({ id, text, todo, setTodo, checked }) => {
+const Task = ({ id, text, todo, setTodo, checked, provided }) => {
 	let toggler = checked;
 	let index = -1;
 	const completedHandler = () => {
@@ -20,7 +20,12 @@ const Task = ({ id, text, todo, setTodo, checked }) => {
 	};
 
 	return (
-		<div className="task">
+		<div
+			className="task"
+			ref={provided.innerRef}
+			{...provided.draggableProps}
+			{...provided.dragHandleProps}
+		>
 			<input
 				type="checkbox"
 				checked={toggler}

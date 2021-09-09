@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './css/style.css';
 import Header from './components/Header';
 import Input from './components/Input';
@@ -23,7 +24,6 @@ const App = () => {
 			};
 		});
 		setTodo(array);
-		console.log(todo);
 	}, [isChecked]);
 
 	useEffect(() => {
@@ -31,6 +31,28 @@ const App = () => {
 		filters === 'active' && setFilteredTodo(todo.filter((task) => task.completed === false));
 		filters === 'completed' && setFilteredTodo(todo.filter((task) => task.completed === true));
 	}, [filters, todo]);
+
+	const onDragEnd = useCallback(
+		(param) => {
+			const srcI = param.source.index;
+			const desI = param.destination.index;
+			let dupTodo = [];
+			const srcObj = todo[srcI];
+			const desObj = todo[desI];
+			todo.forEach((task, index) => {
+				if (index === srcI) dupTodo.push(desObj);
+				if (index === desI) dupTodo.push(srcObj);
+				// else dupTodo.push(task);
+			});
+
+			// dupTodo[desI] = srcObj;
+			console.log(todo);
+			console.log(dupTodo);
+
+			// console.log(todo.splice(desI, 0, todo.splice(srcI, 1)[0]));
+		},
+		[todo]
+	);
 
 	return (
 		<div className="container">
@@ -43,23 +65,43 @@ const App = () => {
 				todo={todo}
 				setTodo={setTodo}
 			/>
-			<div className="tasks">
-				{filteredTodo.length ? (
-					filteredTodo.map((task) => (
-						<Task
-							key={task.id}
-							id={task.id}
-							text={task.text}
-							checked={task.completed}
-							todo={todo}
-							setTodo={setTodo}
-						/>
-					))
-				) : (
-					<NoTask />
-				)}
-				<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
-			</div>
+			<DragDropContext onDragEnd={onDragEnd}>
+				<div className="tasks">
+					<Droppable droppableId="droppable-1">
+						{(provided, snapshot) => (
+							<div
+								className="dragable--container"
+								ref={provided.innerRef}
+								// style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
+								{...provided.droppableProps}
+							>
+								{filteredTodo.length ? (
+									filteredTodo.map((task, index) => (
+										<Draggable key={task.id} draggableId={`draggable-${task.id}`} index={index}>
+											{(provided, snapshot) => (
+												<Task
+													key={task.id}
+													id={task.id}
+													text={task.text}
+													checked={task.completed}
+													todo={todo}
+													setTodo={setTodo}
+													indexValue={index}
+													provided={provided}
+												/>
+											)}
+										</Draggable>
+									))
+								) : (
+									<NoTask />
+								)}
+								{provided.placeholder}
+							</div>
+						)}
+					</Droppable>
+					<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
+				</div>
+			</DragDropContext>
 			<Drag />
 		</div>
 	);

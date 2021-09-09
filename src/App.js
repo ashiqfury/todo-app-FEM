@@ -15,7 +15,15 @@ const App = () => {
 	const [filteredTodo, setFilteredTodo] = useState([]);
 
 	useEffect(() => {
-		console.log(isChecked);
+		const array = todo.map((task) => {
+			return {
+				id: task.id,
+				text: task.text,
+				completed: isChecked,
+			};
+		});
+		setTodo(array);
+		console.log(todo);
 	}, [isChecked]);
 
 	useEffect(() => {

@@ -26,26 +26,49 @@ body {
 	width: 100%;
 	min-height: 100vh;
 	font-family: $font;
-	background: $veryDarkBlue;
+	background-color: $veryDarkBlue;
 	background-image: url('../images/bg-desktop-dark.jpg');
 	background-size: 100vw 0;
 	background-repeat: no-repeat;
+	background-position: top center;
 	display: flex;
 	justify-content: center;
 	margin: 100px auto 50px;
-	animation: background 800ms 500ms forwards;
+	animation: backgroundDesktop 800ms 500ms forwards ease-in-out;
 	transition: 500ms;
+
+	@media only screen and (max-width: 768px) {
+		margin: 50px auto 30px;
+		background-size: 100vw 100px;
+		animation: backgroundMobile 800ms 500ms forwards ease-in-out;
+	}
 }
 
-@keyframes background {
+@keyframes backgroundDesktop {
 	0% {
 		background-size: 100vw 0;
+		opacity: 0;
 	}
 	50% {
-		background-size: 100vw 450px;
+		background-size: 100vw 300px;
+		opacity: 1;
 	}
 	100% {
 		background-size: 100vw 250px;
+	}
+}
+
+@keyframes backgroundMobile {
+	0% {
+		background-size: 100vw 0;
+		opacity: 0;
+	}
+	50% {
+		background-size: 100vw 250px;
+		opacity: 1;
+	}
+	100% {
+		background-size: 100vw 180px;
 	}
 }
 
@@ -54,6 +77,12 @@ body {
 	width: 35vw;
 	height: auto;
 	transition: 500ms;
+
+	@media only screen and (max-width: 768px) {
+		min-width: 320px;
+		width: 70vw;
+		max-width: 400px;
+	}
 }
 
 .checkbox {

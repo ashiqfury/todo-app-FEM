@@ -8,6 +8,9 @@
 	border-bottom: 1px solid $veryDarkGrayishBlue;
 	padding: 30px 80px;
 	transition: 250ms;
+	@media only screen and (max-width: 768px) {
+		padding: 30px;
+	}
 
 	&__text {
 		color: $darkGrayishBlue;

@@ -5,6 +5,15 @@
 	justify-content: space-between;
 	margin-bottom: 20px;
 
+	.link-to-fury {
+		text-decoration: none;
+		transition: 250ms;
+
+		&:hover {
+			transform: scale(1.05);
+		}
+	}
+
 	&--text {
 		color: $lightGrayishBlue;
 		text-transform: uppercase;
@@ -20,5 +29,10 @@
 		height: auto;
 		object-fit: cover;
 		cursor: pointer;
+		transition: 250ms;
+
+		&:hover {
+			transform: scale(1.2);
+		}
 	}
 }

@@ -12,7 +12,9 @@ const Header = () => {
 
 	return (
 		<div className="header">
-			<h1 className="header--text">Todo</h1>
+			<a href="https://www.github.com/ashiqfury" className="link-to-fury">
+				<h1 className="header--text">Todo</h1>
+			</a>
 			{theme === 'light' ? (
 				<img src={moon} onClick={clickHandler} alt="Dark Theme" className="header--toggler" />
 			) : (

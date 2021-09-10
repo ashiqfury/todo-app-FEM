@@ -128,6 +128,13 @@ body {
   justify-content: space-between;
   margin-bottom: 20px;
 }
+.header .link-to-fury {
+  text-decoration: none;
+  transition: 250ms;
+}
+.header .link-to-fury:hover {
+  transform: scale(1.05);
+}
 .header--text {
   color: #cacde8;
   text-transform: uppercase;
@@ -144,6 +151,10 @@ body {
   height: auto;
   object-fit: cover;
   cursor: pointer;
+  transition: 250ms;
+}
+.header--toggler:hover {
+  transform: scale(1.2);
 }
 
 .input {

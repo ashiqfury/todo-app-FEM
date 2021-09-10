@@ -25,6 +25,11 @@ const App = () => {
 		save(todo);
 	}, [todo]);
 
+	// if todo list is empty, then uncheck the checkbox in input component
+	useEffect(() => {
+		todo.length === 0 && setIsChecked(false);
+	}, [todo]);
+
 	// function for completed all checkbox
 	useMemo(() => {
 		const array = todo.map((task) => {
@@ -76,10 +81,9 @@ const App = () => {
 													key={task.id}
 													id={task.id}
 													text={task.text}
-													checked={task.completed}
 													todo={todo}
 													setTodo={setTodo}
-													indexValue={index}
+													checked={task.completed}
 													provided={provided}
 												/>
 											)}

@@ -89,7 +89,7 @@ const App = () => {
 							</div>
 						)}
 					</Droppable>
-					<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} />
+					<Footer count={todo.length} setFilters={setFilters} setTodo={setTodo} todo={todo} />
 				</div>
 			</DragDropContext>
 			<Drag />

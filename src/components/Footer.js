@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const Footer = ({ count, setFilters, setTodo }) => {
+const Footer = ({ count, setFilters, setTodo, todo }) => {
 	const allBtn = useRef(null);
 	const activeBtn = useRef(null);
 	const completedBtn = useRef(null);
@@ -20,6 +20,10 @@ const Footer = ({ count, setFilters, setTodo }) => {
 		e.target.classList.add('active');
 	};
 
+	const clearCompleted = () => {
+		setTodo(todo.filter((task) => task.completed === false));
+	};
+
 	return (
 		<div className="footer">
 			<p className="footer--count">{count} items left</p>
@@ -34,7 +38,7 @@ const Footer = ({ count, setFilters, setTodo }) => {
 					Completed
 				</button>
 			</div>
-			<button className="footer--clear btn" onClick={() => setTodo([])}>
+			<button className="footer--clear btn" onClick={clearCompleted}>
 				Clear Completed
 			</button>
 		</div>

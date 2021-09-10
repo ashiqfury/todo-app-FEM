@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './css/style.css';
 import Header from './components/Header';
@@ -15,7 +15,7 @@ const App = () => {
 	const [filters, setFilters] = useState('all');
 	const [filteredTodo, setFilteredTodo] = useState([]);
 
-	useEffect(() => {
+	useMemo(() => {
 		const array = todo.map((task) => {
 			return {
 				id: task.id,

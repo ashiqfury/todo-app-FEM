@@ -101,7 +101,6 @@ body {
   border: 1.5px solid #4d5066;
   transition: 250ms;
   cursor: pointer;
-  transition: 200ms;
 }
 
 .checkbox-label:hover {

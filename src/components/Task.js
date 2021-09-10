@@ -41,3 +41,5 @@ const Task = ({ id, text, todo, setTodo, checked, provided }) => {
 };
 
 export default Task;
+
+/***************************** Ashiq Fury : --> https://github.com/ashiqfury ****************************************/

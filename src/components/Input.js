@@ -35,3 +35,5 @@ const Input = ({ todo, setTodo, isChecked, setIsChecked }) => {
 };
 
 export default Input;
+
+/***************************** Ashiq Fury : --> https://github.com/ashiqfury ****************************************/

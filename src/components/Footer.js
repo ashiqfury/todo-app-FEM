@@ -46,3 +46,5 @@ const Footer = ({ count, setFilters, setTodo, todo }) => {
 };
 
 export default Footer;
+
+/***************************** Ashiq Fury : --> https://github.com/ashiqfury ****************************************/

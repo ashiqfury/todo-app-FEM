@@ -1,6 +1,13 @@
 {
 	"name": "todo-app",
 	"version": "0.1.0",
+	"author": "ashiqfury",
+	"description": "A simple todo application using react js",
+	"keywords": [
+		"react",
+		"sass",
+		"react-beautiful-dnd"
+	],
 	"private": true,
 	"dependencies": {
 		"@testing-library/jest-dom": "^5.14.1",

@@ -3,6 +3,7 @@
 	"version": "0.1.0",
 	"author": "ashiqfury",
 	"description": "A simple todo application using react js",
+	"homepage": "http://ashiqfury.github.io/todo-app-FEM",
 	"keywords": [
 		"react",
 		"sass",
@@ -24,7 +25,9 @@
 		"build": "react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
-		"compile": "sass --watch --color --no-source-map src/scss:src/css"
+		"compile": "sass --watch --color --no-source-map src/scss:src/css",
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -43,5 +46,9 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"gh-pages": "^3.2.3",
+		"sass": "^1.39.2"
 	}
 }

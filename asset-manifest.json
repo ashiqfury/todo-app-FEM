@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/todo-app-FEM/static/css/main.9e528fd5.chunk.css",
+    "main.js": "/todo-app-FEM/static/js/main.1fa9ce46.chunk.js",
+    "main.js.map": "/todo-app-FEM/static/js/main.1fa9ce46.chunk.js.map",
+    "runtime-main.js": "/todo-app-FEM/static/js/runtime-main.18b9b2b3.js",
+    "runtime-main.js.map": "/todo-app-FEM/static/js/runtime-main.18b9b2b3.js.map",
+    "static/js/2.7283226b.chunk.js": "/todo-app-FEM/static/js/2.7283226b.chunk.js",
+    "static/js/2.7283226b.chunk.js.map": "/todo-app-FEM/static/js/2.7283226b.chunk.js.map",
+    "index.html": "/todo-app-FEM/index.html",
+    "static/css/main.9e528fd5.chunk.css.map": "/todo-app-FEM/static/css/main.9e528fd5.chunk.css.map",
+    "static/js/2.7283226b.chunk.js.LICENSE.txt": "/todo-app-FEM/static/js/2.7283226b.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/todo-app-FEM/static/media/icon-check.a8fb15d0.svg",
+    "static/media/icon-cross.6ee81d30.svg": "/todo-app-FEM/static/media/icon-cross.6ee81d30.svg",
+    "static/media/icon-moon.6c03114b.svg": "/todo-app-FEM/static/media/icon-moon.6c03114b.svg",
+    "static/media/icon-sun.910b1f9a.svg": "/todo-app-FEM/static/media/icon-sun.910b1f9a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18b9b2b3.js",
+    "static/js/2.7283226b.chunk.js",
+    "static/css/main.9e528fd5.chunk.css",
+    "static/js/main.1fa9ce46.chunk.js"
+  ]
+}

@@ -1,20 +1,31 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import './css/style.css';
 import Header from './components/Header';
 import Input from './components/Input';
 import Task from './components/Task';
 import Footer from './components/Footer';
 import NoTask from './components/NoTask';
 import Drag from './components/Drag';
+import './css/style.css';
+import { save, retrive } from './localStorage';
 
 const App = () => {
 	const [todo, setTodo] = useState([]); // List of all todos
-	const [value, setValue] = useState(''); // input field values
 	const [isChecked, setIsChecked] = useState(false); // input field checkbox
 	const [filters, setFilters] = useState('all');
 	const [filteredTodo, setFilteredTodo] = useState([]);
 
+	// retriving local storage data only once.
+	useEffect(() => {
+		retrive(todo, setTodo);
+	}, []);
+
+	// saving data to localstorage everytime when data changes
+	useEffect(() => {
+		save(todo);
+	}, [todo]);
+
+	// function for completed all checkbox
 	useMemo(() => {
 		const array = todo.map((task) => {
 			return {
@@ -47,14 +58,7 @@ const App = () => {
 	return (
 		<div className="container">
 			<Header />
-			<Input
-				value={value}
-				setValue={setValue}
-				isChecked={isChecked}
-				setIsChecked={setIsChecked}
-				todo={todo}
-				setTodo={setTodo}
-			/>
+			<Input isChecked={isChecked} setIsChecked={setIsChecked} todo={todo} setTodo={setTodo} />
 			<DragDropContext onDragEnd={onDragEnd}>
 				<div className="tasks">
 					<Droppable droppableId="droppable-1">
@@ -62,7 +66,6 @@ const App = () => {
 							<div
 								className="draggable--container"
 								ref={provided.innerRef}
-								// style={{ backgroundColor: snapshot.isDraggingOver ? 'blue' : 'grey' }}
 								{...provided.droppableProps}
 							>
 								{filteredTodo.length ? (

@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Input = ({ value, setValue, todo, setTodo, isChecked, setIsChecked }) => {
+const Input = ({ todo, setTodo, isChecked, setIsChecked }) => {
+	const [value, setValue] = useState(''); // input field values
 	const keyHandler = (e) => {
-		// Input field submit handler
-		if (e.key === 'Enter') {
+		if (e.keyCode === 13) {
+			if (value.trim() === '') return setValue('');
 			setTodo([...todo, { id: Math.random() * 10000, text: value, completed: false }]);
 			setValue('');
 		}

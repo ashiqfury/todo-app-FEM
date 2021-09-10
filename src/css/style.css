@@ -252,11 +252,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #25273c;
-  transition: 50ms;
+  transition: 500ms;
 }
 @media only screen and (max-width: 768px) {
   .footer__filter {
+    background: #25273c;
     position: absolute;
     width: 100%;
     top: 50px;
@@ -264,6 +264,7 @@ body {
     padding: 10px 60px;
     border-radius: 3px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+    transition: 50ms;
   }
 }
 
@@ -373,8 +374,10 @@ body.light .notask__text--highlight {
 body.light .footer--count {
   color: #9394a5;
 }
-body.light .footer__filter {
-  background: #e4e5f1;
+@media only screen and (max-width: 768px) {
+  body.light .footer__filter {
+    background: #e4e5f1;
+  }
 }
 body.light .btn {
   background-color: transparent;

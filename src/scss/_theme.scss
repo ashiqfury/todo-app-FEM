@@ -38,7 +38,9 @@ body.light {
 		color: $darkGrayishBluelt;
 	}
 	.footer__filter {
-		background: $veryLightGrayishBlue;
+		@media only screen and (max-width: 768px) {
+			background: $veryLightGrayishBlue;
+		}
 	}
 	.btn {
 		background-color: transparent;

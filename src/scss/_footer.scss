@@ -16,10 +16,10 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background: $veryDarkDesaturatedBlue;
-		transition: 50ms;
+		transition: 500ms;
 
 		@media only screen and (max-width: 768px) {
+			background: $veryDarkDesaturatedBlue;
 			position: absolute;
 			width: 100%;
 			top: 50px;
@@ -27,6 +27,7 @@
 			padding: 10px 60px;
 			border-radius: 3px;
 			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
+			transition: 50ms;
 		}
 	}
 }

@@ -1,17 +1,19 @@
-Live Now 👉 [https://ashiqfury.github.io/todo-app-FEM](Todo Application)
-Developer 👉 [https://github.com/ashiqfury](Ashiq Fury)
+# About Application and Developer
 
-Your users should be able to:
+Live Now 👉 [Todo Application](https://ashiqfury.github.io/todo-app-FEM) <br>
+Developer 👉 [Ashiq Fury](https://github.com/ashiqfury)
 
-✴️ View the optimal layout for the app depending on their device's screen size
-✴️ See hover states for all interactive elements on the page
-✴️ Add new todos to the list
-✴️ Mark todos as complete
-✴️ Delete todos from the list
-✴️ Filter by all/active/complete todos
-✴️ Clear all completed todos
-✴️ Toggle light and dark mode
-✴️ Drag and drop to reorder items on the list
+## Your users should be able to:
+
+✴️ View the optimal layout for the app depending on their device's screen size <br />
+✴️ See hover states for all interactive elements on the page <br />
+✴️ Add new todos to the list <br />
+✴️ Mark todos as complete <br />
+✴️ Delete todos from the list <br />
+✴️ Filter by all/active/complete todos <br />
+✴️ Clear all completed todos <br />
+✴️ Toggle light and dark mode <br />
+✴️ Drag and drop to reorder items on the list <br />
 
 <hr />
 

@@ -17,6 +17,7 @@
 	padding: 12px 10px;
 	border-bottom: 1px solid $veryDarkGrayishBlue;
 	background: $veryDarkDesaturatedBlue;
+	border-radius: 3px;
 
 	&--text {
 		position: relative;
@@ -26,6 +27,9 @@
 		font-size: 1rem;
 		cursor: default;
 		transition: 250ms;
+		@media only screen and (max-width: 768px) {
+			width: 85%;
+		}
 	}
 
 	&--close {
@@ -46,9 +50,6 @@
 }
 
 .draggable--container {
-	border-radius: 3px 3px 0 0;
-}
-.task:first-child {
 	border-radius: 3px 3px 0 0;
 }
 

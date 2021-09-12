@@ -172,6 +172,7 @@ body {
   padding: 10px;
   border-radius: 3px;
   margin-bottom: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
 }
 .input--text {
   margin-left: 10px;
@@ -207,6 +208,7 @@ body {
   padding: 12px 10px;
   border-bottom: 1px solid #4d5066;
   background: #25273c;
+  border-radius: 3px;
 }
 .task--text {
   position: relative;
@@ -216,6 +218,11 @@ body {
   font-size: 1rem;
   cursor: default;
   transition: 250ms;
+}
+@media only screen and (max-width: 768px) {
+  .task--text {
+    width: 85%;
+  }
 }
 .task--close {
   cursor: pointer;
@@ -234,10 +241,6 @@ body {
 }
 
 .draggable--container {
-  border-radius: 3px 3px 0 0;
-}
-
-.task:first-child {
   border-radius: 3px 3px 0 0;
 }
 

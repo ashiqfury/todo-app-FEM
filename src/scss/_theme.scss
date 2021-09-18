@@ -1,6 +1,6 @@
 body.light {
-	background-image: url('../images/bg-mobile-light.jpg');
 	background-color: $veryLightGray;
+	background-image: url('../images/bg-mobile-light.jpg');
 
 	@media only screen and (max-width: 768px) {
 		background-image: url('../images/bg-desktop-light.jpg');

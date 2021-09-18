@@ -35,7 +35,7 @@ body {
 	display: flex;
 	justify-content: center;
 	animation: backgroundDesktop 800ms 500ms forwards ease-in-out;
-	transition: 500ms;
+	transition: 250ms;
 
 	@media only screen and (max-width: 768px) {
 		background-size: 100vw 100px;
@@ -77,7 +77,7 @@ body {
 	width: 35vw;
 	height: auto;
 	margin: 100px auto 50px;
-	transition: 500ms;
+	transition: 250ms;
 
 	@media only screen and (max-width: 768px) {
 		min-width: 320px;

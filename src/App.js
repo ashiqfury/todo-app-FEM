@@ -17,7 +17,7 @@ const App = () => {
 
 	// retriving local storage data only once.
 	useEffect(() => {
-		retrive(todo, setTodo);
+		retrive(setTodo);
 	}, []);
 
 	// saving data to localstorage everytime when data changes

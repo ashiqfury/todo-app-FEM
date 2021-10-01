@@ -16,6 +16,7 @@ Developer 👉 [Ashiq Fury](https://github.com/ashiqfury)
 ✴️ Drag and drop to reorder items on the list <br />
 ✴️ Your data will stored into local storage <br />
 ✴️ And also your data will retrived from local storage, so that no data will lost. <br />
+✴️ Themes will also store in local storage.
 
 <hr />
 
